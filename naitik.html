@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Naitik's Page</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", serif;
+  background: linear-gradient(135deg, #020024, #090979, #00d4ff);
+  text-align: center;
+  color: white;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+.bg-circle {
+  position: fixed;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  animation: floatBg 8s infinite ease-in-out;
+  z-index: -1;
+}
+
+.circle1 {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  left: 8%;
+}
+
+.circle2 {
+  width: 260px;
+  height: 260px;
+  bottom: 10%;
+  right: 8%;
+  animation-delay: 2s;
+}
+
+.circle3 {
+  width: 120px;
+  height: 120px;
+  top: 55%;
+  left: 75%;
+  animation-delay: 4s;
+}
+
+/* Main Glass Box */
+.container {
+  width: 48%;
+  margin: 50px auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  animation: boxFloat 3s ease-in-out infinite alternate;
+}
+
+/* Typing Heading */
+h1 {
+  font-size: 38px;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 0 0 15px #00d4ff;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #00d4ff;
+  animation: typing 4s steps(35), blink 0.7s infinite;
+}
+
+/* Sub Headings */
+h2 {
+  font-size: 30px;
+  margin: 30px 0 18px;
+  color: #b9f6ff;
+  text-shadow: 0 0 12px #00d4ff;
+  animation: fadeUp 1.5s ease;
+}
+
+/* Text Card */
+p {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.7;
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  animation: fadeUp 2s ease;
+}
+
+/* Images */
+img {
+  width: 100%;
+  margin: 25px 0;
+  border-radius: 22px;
+  animation: zoomIn 1.5s ease;
+  transition: 0.5s;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+  border: 3px solid rgba(255,255,255,0.35);
+}
+
+img:hover {
+  transform: scale(1.06) rotate(1deg);
+  box-shadow: 0 0 40px #00d4ff;
+}
+
+/* List Card */
+ol {
+  text-align: left;
+  font-size: 18px;
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  padding: 28px 42px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  animation: slideLeft 1.5s ease;
+}
+
+li {
+  margin: 10px 0;
+  padding: 9px;
+  border-radius: 12px;
+  transition: 0.35s;
+}
+
+li:hover {
+  background: linear-gradient(90deg, #00d4ff, #ffffff);
+  color: #001f3f;
+  transform: translateX(12px) scale(1.03);
+}
+
+/* Cursor */
+.cursor-glow {
+  position: fixed;
+  width: 26px;
+  height: 26px;
+  background: rgba(0, 212, 255, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 25px #00d4ff, 0 0 60px #ffffff;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 16px;
+  margin-top: 30px;
+  box-shadow: 0 -5px 20px rgba(0,212,255,0.4);
+}
+
+footer p {
+  text-align: center;
+  background: none;
+  color: white;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Animations */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes boxFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+@keyframes floatBg {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-35px) scale(1.15); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(45px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.75); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-45px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .container {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-circle circle1"></div>
+<div class="bg-circle circle2"></div>
+<div class="bg-circle circle3"></div>
+
+<div class="cursor-glow" id="cursor"></div>
+
+<div class="container">
+
+<h1>Welcome to sir my Blogging page</h1>
+
+<img src="https://incubator.ucf.edu/wp-content/uploads/2023/07/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1.jpg">
+
+<h2>🤖 Artificial Intelligence (AI)</h2>
+
+<p>
+Artificial Intelligence (AI) is one of the most important inventions of modern science. It refers to the ability of machines to think, learn, and make decisions like humans.
+AI helps computers perform tasks that normally require human intelligence.
+<br><br>
+Today, Artificial Intelligence is used in many fields. In education, AI helps students learn through online classes and smart learning systems.
+In healthcare, AI is used to detect diseases, analyze medical reports, and assist doctors in treatment.
+<br><br>
+AI is also widely used in banking, agriculture, transportation, and industries. One of the biggest advantages of AI is that it saves time and increases accuracy.
+Machines can work faster than humans and reduce mistakes.
+<br><br>
+Examples of AI include voice assistants, chatbots, face recognition systems, and self-driving cars.
+<br><br>
+However, Artificial Intelligence also has some disadvantages. Excessive use of AI may lead to unemployment as machines replace human jobs.
+There are also concerns about data privacy and security. Therefore, AI should be used responsibly.
+<br><br>
+In conclusion, Artificial Intelligence has the power to change the world in a positive way.
+If used wisely, it can make human life easier, safer, and more efficient.
+</p>
+
+<img src="https://edure.in/wp-content/uploads/2025/02/ai-tools.webp">
+
+<h2>🤖 Popular AI Tools</h2>
+
+<ol>
+<li>ChatGPT – AI chatbot for writing, coding, answers</li>
+<li>Jasper AI – Blog & marketing content</li>
+<li>Copy.ai – Social media content</li>
+<li>Writesonic – Articles & SEO</li>
+<li>QuillBot – Paraphrasing tool</li>
+<li>Leonardo AI – Design & graphics</li>
+<li>INK AI – SEO assistant</li>
+<li>HeyGen – AI avatars</li>
+<li>Cursor AI – Code editor</li>
+<li>AIVA – Music composer</li>
+</ol>
+
+<p>
+Artificial Intelligence (AI) is a modern technology that enables machines to think, learn, and make decisions like humans.
+It is used in education, healthcare, banking, transportation, and entertainment.
+AI helps in completing tasks faster and with greater accuracy.
+</p>
+
+<h2>Key Features of Artificial Intelligence (AI)</h2>
+
+<ol>
+<li>Learning Ability</li>
+<li>Reasoning</li>
+<li>Problem Solving</li>
+<li>Automation</li>
+<li>Adaptability</li>
+<li>24/7 Availability</li>
+<li>Data Processing</li>
+<li>Accuracy and Precision</li>
+<li>Natural Language Processing (NLP)</li>
+<li>Image and Speech Recognition</li>
+</ol>
+
+</div>
+
+<footer>
+<p>© 2026 My Blog | Created By Makwana Naitik 👨‍💻</p>
+</footer>
+
+<script>
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", function(e) {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+</script>
+
+</body>
+</html>
